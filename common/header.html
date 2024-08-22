@@ -1,0 +1,256 @@
+<body>
+
+    <script>
+        let pcNav = $('.pc_nav');
+        let depth01 = $('.pc_nav .gnb > li a');
+        let depth02 = $('.pc_nav .depth02');
+        let headerBg = $('.header .bg');
+
+        pcNav.mouseenter(function () {
+            depth02.stop().slideDown();
+            headerBg.stop().slideDown();
+        });
+        pcNav.mouseleave(function () {
+            depth02.stop().slideUp();
+            headerBg.stop().slideUp();
+        });
+
+        depth02.mouseenter(function () {
+            $(this).prev().addClass('on');
+        })
+        depth02.mouseleave(function () {
+            $(this).prev().removeClass('on');
+        })
+
+
+        let header = $('.header');
+
+        header.mouseenter(function () {
+            header.addClass('on');
+        })
+        header.mouseleave(function () {
+            header.removeClass('on');
+        })
+
+        $(window).scroll(function () {
+            let scrollBar = window.scrollY;
+            let BestTop = $('.best_item').offset().top;
+
+            if (scrollBar + 80 >= BestTop) {
+                header.addClass('on');
+                header.mouseenter(function () {
+                    header.addClass('on');
+                })
+                header.mouseleave(function () {
+                    header.addClass('on');
+                })
+
+            } else {
+                header.removeClass('on');
+                header.mouseleave(function () {
+                    header.removeClass('on');
+                })
+            }
+        })
+
+        $('.util .search').click(function () {
+            $('.util .search_box').stop().slideToggle();
+        });
+        $('.close_btn').click(function () {
+            $('.util .search_box').stop().slideUp();
+        });
+
+        let mobileNav = $('.mobile_nav');
+        let menuBtn = $('.util .menu');
+        let mobileDepth01 = $('.mobile_nav .depth01');
+        let mobileDepth02 = $('.mobile_nav .depth02');
+
+        menuBtn.click(function () {
+            mobileNav.toggleClass('on');
+        });
+        /* mobileNav.mouseleave(function () {
+            mobileNav.removeClass('on');
+        }); */
+        mobileDepth01.click(function () {
+            if ($(this).next().css('display') === 'none') {
+                mobileDepth02.slideUp();
+                $(this).next().slideDown();
+                mobileDepth01.removeClass('on');
+                $(this).addClass('on');
+            } else {
+                $(this).next().slideUp();
+                $(this).removeClass('on');
+            }
+            mobileDepth01.removeClass('on');
+            $(this).addClass('on');
+        });
+
+        $('.mobile_nav .search').click(function () {
+            $('.mobile_nav .search_box').toggleClass('on');
+        });
+
+        let topBtn = $('.top_btn');
+        topBtn.click(function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 600);//animate()
+        });//click
+
+
+    </script>
+
+
+
+    <div class="header">
+        <div class="inner">
+            <h1 class="logo">
+                <a href="#" onclick="return false"><img src="img/logo_header_main.svg" alt="포맨트 로고"></a>
+            </h1>
+            <nav class="nav pc pc_nav">
+                <ul class="gnb">
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Gift</a>
+                        <ul class="depth02">
+                            <li>
+                                <a href="#" onclick="return false">선물추천</a>
+                                <a href="#" onclick="return false">온라인단독</a>
+                                <a href="#" onclick="return false">옴므퍼퓸</a>
+                                <a href="#" onclick="return false">팜므퍼퓸</a>
+                            </li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Shop</a>
+                        <ul class="depth02">
+                            <li>
+                                <a href="#" onclick="return false">전체</a>
+                                <a href="#" onclick="return false">베스트</a>
+                                <a href="#" onclick="return false">향수</a>
+                                <a href="#" onclick="return false">바디&헤어</a>
+                                <a href="#" onclick="return false">핸드&립</a>
+                                <a href="#" onclick="return false">라이프스타일</a>
+                                <a href="#" onclick="return false">남성케어</a>
+                                <a href="#" onclick="return false">도구</a>
+                            </li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Subscribe</a>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Community</a>
+                        <ul class="depth02">
+                            <li>
+                                <a href="#" onclick="return false">공지사항</a>
+                                <a href="#" onclick="return false">Q&A</a>
+                                <a href="#" onclick="return false">자주묻는질문</a>
+                                <a href="#" onclick="return false">멤버십</a>
+                            </li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Live</a>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Event</a>
+                    </li>
+                </ul><!-- .gnb end -->
+            </nav><!-- .nav.pc.pc_nav end -->
+
+            <nav class="nav mobile mobile_nav">
+                <div class="search_box">
+                    <input id="search_text" type="text" placeholder="검색어 입력">
+                    <label for="search_text">검색박스</label>
+                    <button class="search">
+                        <img src="img/icon_search333.svg" alt="검색">
+                    </button><!-- .search end -->
+                </div><!-- .search_box end -->
+                <ul class="gnb">
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Gift</a>
+                        <ul class="depth02">
+                            <li>
+                                <a href="#" onclick="return false">선물추천</a>
+                                <a href="#" onclick="return false">온라인단독</a>
+                                <a href="#" onclick="return false">옴므퍼퓸</a>
+                                <a href="#" onclick="return false">팜므퍼퓸</a>
+                            </li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Shop</a>
+                        <ul class="depth02">
+                            <li>
+                                <a href="#" onclick="return false">전체</a>
+                                <a href="#" onclick="return false">베스트</a>
+                                <a href="#" onclick="return false">향수</a>
+                                <a href="#" onclick="return false">바디&헤어</a>
+                                <a href="#" onclick="return false">핸드&립</a>
+                                <a href="#" onclick="return false">라이프스타일</a>
+                                <a href="#" onclick="return false">남성케어</a>
+                                <a href="#" onclick="return false">도구</a>
+                            </li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Subscribe</a>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Community</a>
+                        <ul class="depth02">
+                            <li>
+                                <a href="#" onclick="return false">공지사항</a>
+                                <a href="#" onclick="return false">고객센터</a>
+                                <a href="#" onclick="return false">Q&A</a>
+                                <a href="#" onclick="return false">자주묻는질문</a>
+                                <a href="#" onclick="return false">멤버십</a>
+                            </li>
+                        </ul><!-- .depth02 end -->
+                    </li>
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Live</a>
+                    </li>
+                    <li>
+                        <a href="#" class="depth01" onclick="return false">Event</a>
+                    </li>
+                </ul><!-- .gnb end -->
+            </nav><!-- .nav.mobile.mobile_nav end -->
+
+            <div class="util">
+                <button class="menu mobile">
+                    <img src="img/icon_menu_fff.svg" alt="메뉴 열기">
+                </button><!-- .menu end -->
+                <div class="right">
+                    <button class="search">
+                        <img src="img/icon_search.svg" alt="검색">
+                    </button><!-- .search end -->
+                    <div class="search_box">
+                        <button class="close_btn"><img src="img/icon_X333.svg" alt="창닫기"></button>
+                        <input id="search_text" type="text" placeholder="검색어 입력">
+                        <label for="search_text">검색박스</label>
+                    </div><!-- .search_box end -->
+                    <button class="cs">
+                        <img src="img/icon_CS.svg" alt="고객센터">
+                    </button><!-- .cs end -->
+                    <button class="login">
+                        <img src="img/icon_login.svg" alt="로그인">
+                    </button><!-- .login end -->
+                    <button class="cart">
+                        <img src="img/icon_cart.svg" alt="장바구니">
+                    </button><!-- .cart end -->
+                </div><!-- .right end -->
+            </div><!-- .util end -->
+        </div><!-- .inner end -->
+
+        <div class="bg">
+            <span>2차메뉴 배경색</span>
+        </div><!-- .bg end -->
+    </div><!-- .header end -->
+
+
+    <div class="fixed_btn">
+        <button class="top_btn"><img src="img/top.svg" alt="위로 올라가기"></button>
+        <button class="kakao_btn"><img src="img/kakao.jpg" alt="카카오톡 상담하기"></button>
+    </div><!-- .fixed_btn -->
+
+</body>

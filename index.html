@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="KO">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포맨트</title>
+    <!-- link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        $(function () {
+            let perfumeBtn = $('.perfume .btn_wrap button');
+            let perfumeBox = $('.perfume .item');
+            let closeBtn = $('.perfume .close_btn');
+
+            for (let i = 0; i < perfumeBtn.length; i++) {
+                perfumeBtn.eq(i).click(function () {
+                    perfumeBox.eq(i).fadeIn();
+                    $('.perfume').addClass('on');
+                });
+                closeBtn.click(function () {
+                    perfumeBox.fadeOut();
+                    $('.perfume').removeClass('on');
+                });
+            }
+
+            let firstBtn = document.querySelector('.all_btn');
+            let secondBtn = document.querySelector('.perfume_btn');
+            let thirdBtn = document.querySelector('.body_btn');
+            let fourthBtn = document.querySelector('.life_btn');
+
+            let shopBtn = document.querySelectorAll('.shop_btn a');
+            let shopImage = document.querySelectorAll('.shop .image_wrap img');
+            let shopP = document.querySelectorAll('.shop .text_wrap p');
+            let shopH4 = document.querySelectorAll('.shop .text_wrap h4');
+            let shopStrong = document.querySelectorAll('.shop .text_wrap stong');
+            let shopSpan = document.querySelectorAll('.shop .text_wrap span');
+
+            let allImage = document.querySelectorAll('.shop_all .image_box img');
+            let allP = document.querySelectorAll('.shop_all .text_box p');
+            let allH4 = document.querySelectorAll('.shop_all .text_box h4');
+            let allStrong = document.querySelectorAll('.shop_all .text_box strong');
+            let allSpan = document.querySelectorAll('.shop_all .text_box span');
+
+            let perfumeImage = document.querySelectorAll('.shop_perfume .image_box img');
+            let perfumeP = document.querySelectorAll('.shop_perfume .text_box p');
+            let perfumeH4 = document.querySelectorAll('.shop_perfume .text_box h4');
+            let perfumeStrong = document.querySelectorAll('.shop_perfume .text_box strong');
+            let perfumeSpan = document.querySelectorAll('.shop_perfume .text_box span');
+
+            let bodyImage = document.querySelectorAll('.shop_body .image_box img');
+            let bodyP = document.querySelectorAll('.shop_body .text_box p');
+            let bodyH4 = document.querySelectorAll('.shop_body .text_box h4');
+            let bodyStrong = document.querySelectorAll('.shop_body .text_box strong');
+            let bodySpan = document.querySelectorAll('.shop_body .text_box span');
+
+            let lifeImage = document.querySelectorAll('.shop_life .image_box img');
+            let lifeP = document.querySelectorAll('.shop_life .text_box p');
+            let lifeH4 = document.querySelectorAll('.shop_life .text_box h4');
+            let lifeStrong = document.querySelectorAll('.shop_life .text_box strong');
+            let lifeSpan = document.querySelectorAll('.shop_life .text_box span');
+
+            for (let i = 0; i < shopBtn.length; i++) {
+                shopBtn[i].addEventListener('click', () => {
+                    shopBtn.forEach((btn) => {
+                        btn.classList.remove('on');
+                    })
+                    shopBtn[i].classList.add('on');
+                });
+            }
+
+            for (let i = 0; i < shopImage.length; i++) {
+                firstBtn.addEventListener('click', () => {
+                    shopImage[i].src = allImage[i].src;
+                    shopP[i].innerHTML = allP[i].innerHTML;
+                    shopH4[i].innerHTML = allH4[i].innerHTML;
+                    shopStrong[i].innerHTML = allStrong[i].innerHTML;
+                    shopSpan[i].innerHTML = allSpan[i].innerHTML;
+
+                });//firstBtn
+                secondBtn.addEventListener('click', () => {
+                    shopImage[i].src = perfumeImage[i].src;
+                    shopP[i].innerHTML = perfumeP[i].innerHTML;
+                    shopH4[i].innerHTML = perfumeH4[i].innerHTML;
+                    shopStrong[i].innerHTML = perfumeStrong[i].innerHTML;
+                    shopSpan[i].innerHTML = perfumeSpan[i].innerHTML;
+
+                });//secondBtn
+                thirdBtn.addEventListener('click', () => {
+                    shopImage[i].src = bodyImage[i].src;
+                    shopP[i].innerHTML = bodyP[i].innerHTML;
+                    shopH4[i].innerHTML = bodyH4[i].innerHTML;
+                    shopStrong[i].innerHTML = bodyStrong[i].innerHTML;
+                    shopSpan[i].innerHTML = bodySpan[i].innerHTML;
+
+                });//thirdBtn
+                fourthBtn.addEventListener('click', () => {
+                    shopImage[i].src = lifeImage[i].src;
+                    shopP[i].innerHTML = lifeP[i].innerHTML;
+                    shopH4[i].innerHTML = lifeH4[i].innerHTML;
+                    shopStrong[i].innerHTML = lifeStrong[i].innerHTML;
+                    shopSpan[i].innerHTML = lifeSpan[i].innerHTML;
+
+                });//fourthBtn
+            }
+
+        });//script end
+    </script>
+</head>
+
+<body>
+    <header id="header">
+    </header><!-- #header end -->
+
+    <main id="main">
+        <section class="main_visual">
+            <div class="item_wrap">
+                <div class="item main_visual1">
+                    <a href="#">
+                        <img src="img/main_visual1.jpg" alt="Summer Green">
+                    </a>
+                    <iframe title="main_visual1"
+                            src="//player.vimeo.com/video/973922476?autoplay=1&amp;background=1&amp;loop=1&amp;color=080037&amp;title=0&amp;byline=0&amp;portrait=0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen=""></iframe>
+
+                    <div class="text_box">
+                        <h2>Summer Green</h2>
+                        <p>Limmited Edition</p>
+                    </div><!-- .text_box end -->
+                </div><!-- .item end -->
+                <div class="item main_visual2">
+                    <a href="#">
+                        <img src="img/main_visual2.jpg" alt="Cotton Bath">
+                    </a>
+                    <iframe title="mian_visual2"
+                        src="//player.vimeo.com/video/982962869?autoplay=1&amp;background=1&amp;loop=1&amp;color=080037&amp;title=0&amp;byline=0&amp;portrait=0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen=""></iframe>
+                    <div class="text_box">
+                        <h2>Cotton Bath</h2>
+                        <p>Choonsik Limmited Edition </p>
+                    </div><!-- .text_box end -->
+                </div><!-- .item end -->
+                <div class="item main_visual3">
+                    <a href="#">
+                        <img src="img/main_visual3.jpg" alt="Cotton 366">
+                    </a>
+                    <iframe title="main_visual3"
+                        src="//player.vimeo.com/video/958041736?autoplay=1&amp;background=1&amp;loop=1&amp;color=080037&amp;title=0&amp;byline=0&amp;portrait=0"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen=""></iframe>
+                    <div class="text_box">
+                        <h2>Cotton 366</h2>
+                        <p>Signature Purfume</p>
+                    </div><!-- .text_box end -->
+                </div><!-- .item end -->
+            </div><!-- .item_wrap end -->
+
+        </section><!-- .main_visual end -->
+
+
+        <section class="best_item">
+            <div class="inner">
+                <h3><a href="#">Best Items</a></h3>
+                <div class="swiper bestSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/bestitems1.jpg"
+                                        alt="시그니처 퍼퓸 코튼배쓰 춘식이 에디션"></a>
+                                <div class="item_tag">
+                                    <span class="limited">LIMITED</span>
+                                    <span class="fire">주문폭주</span>
+                                </div><!-- .item_tag end -->
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>새하얀 비누 거품 | 화이트 아이리스 | 코튼 머스크</p>
+                                <h4>시그니처 퍼퓸 코튼배쓰 춘식이 에디션</h4>
+                                <strong>59,000원</strong>
+                                <span>리뷰162</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/bestitems2.jpg"
+                                        alt="코튼브리즈 썸머 에디션"></a>
+                                <div class="item_tag">
+                                    <span class="new">NEW</span>
+                                    <span class="fire">주문폭주</span>
+                                </div><!-- .item_tag end -->
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>청량한 카시스 | 산들바람 | 베티버</p>
+                                <h4>코튼브리즈 썸머 에디션</h4>
+                                <strong>59,000원</strong>
+                                <span>리뷰 137</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/bestitems3.jpg"
+                                        alt="시그니처 퍼퓸 디스커버리 12종 세트"></a>
+                                <div class="item_tag">
+                                    <span class="new">NEW</span>
+                                </div><!-- .item_tag end -->
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>세상에서 가장 작은 시그니처 퍼퓸 12종</p>
+                                <h4>시그니처 퍼퓸 디스커버리 12종 세트</h4>
+                                <strong>139,000원</strong>
+                                <span>리뷰 53</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/bestitems4.jpg"
+                                        alt="시그니처 퍼퓸 디스커버리 세트"></a>
+                                <div class="item_tag">
+                                    <span class="new">NEW</span>
+                                </div><!-- .item_tag end -->
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>세상에서 가장 작은 시그니처 퍼퓸 5종</p>
+                                <h4>시그니처 퍼퓸 디스커버리 세트</h4>
+                                <strong>59,000원</strong>
+                                <span>리뷰 1,782</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/bestitems5.jpg"
+                                        alt="시트러스 | 스위트피 | 소프트 캐시미어"></a>
+                                <div class="item_tag">
+                                    <span class="event">EVENT</span>
+                                    <span class="gift">사은품 증정</span>
+                                </div><!-- .item_tag end -->
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>시트러스 | 스위트피 | 소프트 캐시미어</p>
+                                <h4>시그니처 퍼퓸 코튼 366</h4>
+                                <strong>46,000원</strong>
+                                <span>리뷰 341</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/bestitems6.jpg" alt="시그니처 퍼퓸"></a>
+                                <div class="item_tag">
+                                    <span class="event">EVENT</span>
+                                    <span class="gift">사은품 증정</span>
+                                </div><!-- .item_tag end -->
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>시그니처 퍼퓸의 13가지 향</p>
+                                <h4>시그니처 퍼퓸</h4>
+                                <strong>39,000원</strong>
+                                <span>리뷰 65,743</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+                    </div>
+                </div>
+            </div><!-- .inner end -->
+        </section><!-- .best_item end -->
+
+
+        <section class="perfume">
+            <div class="inner">
+                <div class="btn_wrap">
+                    <button class="btn1">
+                        <img src="img/icon_plus_b.svg" alt="시그니처 퍼퓸 코튼 브리즈">
+                    </button><!-- .btn1 end -->
+                    <button class="btn2">
+                        <img src="img/icon_plus_w.svg" alt="시그니처 퍼퓸 코튼허그">
+                    </button><!-- .btn2 end -->
+                    <button class="btn3">
+                        <img src="img/icon_plus_b.svg" alt="시그니처 퍼퓸 코튼메모리">
+                    </button><!-- .btn3 end -->
+                    <button class="btn4">
+                        <img src="img/icon_plus_b.svg" alt="시그니처 퍼퓸 코튼 딜라잇부케">
+                    </button><!-- .btn4 end -->
+                    <button class="btn5">
+                        <img src="img/icon_plus_b.svg" alt="시그니처 퍼퓸 코튼 디어 나잇">
+                    </button><!-- .btn5 end -->
+                </div><!-- .btn_wrap -->
+                <div class="perfume_list">
+                    <div class="item perfume1">
+                        <button class="close_btn"><img src="img/icon_X333.svg" alt="창닫기"></button>
+                        <a href="#" onclick="return false"><img src="img/perfume1.png" alt="시그니처 퍼퓸 코튼 브리즈"></a>
+                        <h4>시그니처 퍼퓸 코튼브리즈</h4>
+                        <div class="price">
+                            <span>62,000원</span>
+                            <strong>46,000원</strong>
+                        </div><!-- .price end -->
+                        <p>청량한 카시스ㅣ산들바람ㅣ베티버
+                            <br>
+                            <br>
+                            향기가 실린 바람과 우연의 시작.
+                            <br>
+                            <br>
+                            Global Director Perfumer. Christian Provenzano
+                            <br>
+                            <br>
+                            코튼브리즈는 Christian Provenzanork가 '산들바람'에 영감을 받아 탄생한 향수입니다.
+                            <br>
+                            <br>
+                            경쾌한 그린 노트와 달콤한 카시스 노트가 부드러운 코튼향과 어우러져 그늘 밑 기분 좋게 불어오는 산들바람을 연상케 합니다.
+                            <br>
+                            <br>
+                            [50ml]
+                        </p>
+                        <button class="add_to">Add to cart</button>
+                    </div><!-- .item.perfume1 end -->
+                    <div class="item perfume2">
+                        <button class="close_btn"><img src="img/icon_X333.svg" alt="창닫기"></button>
+                        <a href="#" onclick="return false"><img src="img/perfume2.png" alt="시그니처 퍼퓸 코튼허그"></a>
+                        <h4>시그니처 퍼퓸 코튼허그</h4>
+                        <div class="price">
+                            <span>49,000원</span>
+                            <strong>36,000원</strong>
+                        </div><!-- .price end -->
+                        <p>은방울 꽃ㅣ포근한 이불ㅣ머스크
+                            <br>
+                            <br>
+                            안기고 싶은 포근함
+                            <br>
+                            <br>
+                            공기 중에 퍼지는 뮤게의 깨끗함과 머스크의 부드러움
+                            <br>
+                            <br>
+                            몸을 따라 흐르는 촉촉한 물기 사이로 피어나는 깨끗한 살냄새,
+                            허그의 향연,
+                            <br>
+                            사랑하는 사람을 끌어안았을때의 기분좋은 포근함
+                            <br>
+                            <br>
+                            [50ml]
+                        </p>
+                        <button class="add_to">Add to cart</button>
+                    </div><!-- .item.perfume2 end -->
+                    <div class="item perfume3">
+                        <button class="close_btn"><img src="img/icon_X333.svg" alt="창닫기"></button>
+                        <a href="#" onclick="return false"><img src="img/perfume3.png" alt="시그니처 퍼퓸 코튼메모리"></a>
+                        <h4>시그니처 퍼퓸 코튼메모리</h4>
+                        <div class="price">
+                            <span>62,000원</span>
+                            <strong>46,000원</strong>
+                        </div><!-- .price end -->
+                        <p>물기 어린 복숭아ㅣ히아신스ㅣ머스크
+                            <br>
+                            <br>
+                            코랄빛으로 물드는 설렘의 기억
+                            <br>
+                            Perfumer. Jennifer Jambon
+                            <br>
+                            코튼메모리는 前 Molton Brown UK 수석 조향사,
+                            <br>
+                            現 아르제빌의 조향사인 제니퍼 잼본(Jennifer Jambon)이
+                            <br>
+                            '설렜던 순간'에 영감을 받아 탄생한 향수입니다.
+                            <br>
+                            <br>
+                            생자몽과 복숭아를 갓 짜낸듯한 향기가 피어오를 때 히아신스의 플로럴 무드 속 우아함 아래, 살결같은 파우더리 함이 더해져 설렘의 기억을 연상케 합니다.
+                            <br>
+                            <br>
+                            [50ml]
+                        </p>
+                        <button class="add_to">Add to cart</button>
+                    </div><!-- .item.perfume3 end -->
+                    <div class="item perfume4">
+                        <button class="close_btn"><img src="img/icon_X333.svg" alt="창닫기"></button>
+                        <a href="#" onclick="return false"><img src="img/perfume4.png" alt="시그니처 퍼퓸 코튼 딜라잇부케"></a>
+                        <h4>시그니처 퍼퓸 코튼 딜라잇부케</h4>
+                        <div class="price">
+                            <span>62,000원</span>
+                            <strong>46,000원</strong>
+                        </div><!-- .price end -->
+                        <p>프리지아ㅣ이슬 머금은 장미ㅣ풀내음
+                            <br>
+                            <br>
+                            생기 가득한 꽃내음이 주는 환희
+                            <br>
+                            Global Director Perfumer. Christian Provenzano
+                            <br>
+                            <br>
+                            햇살을 가득 머금고 힘있게 펼쳐진 꽃,
+                            <br>
+                            루바브와 은방울꽃의 그리너리한 싱그러움 너머로, 핑크 프리지아와 로즈의 활짝 피어난 꽃잎이 내뿜는 생생한 아름다움을 담은 향기를 선사합니다.
+                            <br>
+                            <br>
+                            [50ml]
+                        </p>
+                        <button class="add_to">Add to cart</button>
+                    </div><!-- .item.perfume4 end -->
+                    <div class="item perfume5">
+                        <button class="close_btn"><img src="img/icon_X333.svg" alt="창닫기"></button>
+                        <a href="#" onclick="return false"><img src="img/perfume5.png" alt="시그니처 퍼퓸 코튼 디어 나잇"></a>
+                        <h4>시그니처 퍼퓸 코튼 디어 나잇</h4>
+                        <div class="price">
+                            <span>62,000원</span>
+                            <strong>49,000원</strong>
+                        </div><!-- .price end -->
+                        <p>새벽공기ㅣ아이리스ㅣ우디 머스크
+                            <br>
+                            <br>
+                            새벽녘을 수놓는 밤하늘 아래, 따스한 살결의 온기.
+                            <br>
+                            Global Director Perfumer. Christian Provenzano
+                            <br>
+                            <br>
+                            핑크페퍼의 터치로 시작되는 순수한 로즈의 환기와 스며드는 살결의 따스함이 담긴 섬세하고 센슈얼한 코튼 머스크 향
+                            <br>
+                            <br>
+                            온 몸을 휘감고 있던 찬바람을 떨치고 포근한 이불 속에 손과 발을 넣으면 전해지는 따스한 떨림.
+                            <br>
+                            살아있다는 행복. 온기가 가져다주는 포근한 위로.
+                            <br>
+                            <br>
+                            차가움 속 더욱 선명해지는 따뜻함의 대비를 통해 서늘함과 따스함이 공존하는 이미지의 중첩을 그려낸 시그니처 퍼퓸은, 환기와 온기를 통해 전하는 '위로'에 관한 이야기입니다.
+                            <br>
+                            <br>
+                            [50ml]
+                        </p>
+                        <button class="add_to">Add to cart</button>
+                    </div><!-- .item.perfume5 end -->
+                </div><!-- perfume_list end -->
+            </div><!-- .inner end -->
+        </section><!-- .perfume end -->
+
+
+        <section class="shop">
+            <div class="inner">
+                <h3><a href="#" onclick="return false">Shop</a></h3>
+                <div class="shop_btn">
+                    <a href="#" class="on all_btn" onclick="return false">All</a>
+                    <a href="#" class="perfume_btn" onclick="return false">Perfume</a>
+                    <a href="#" class="body_btn" onclick="return false">Body & Hair</a>
+                    <a href="#" class="life_btn" onclick="return false">Life Style</a>
+                </div><!-- .shop_btn end -->
+                <div class="swiper bestSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/shop_all1.jpg" alt="Shop 이미지1"></a>
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>은방울 꽃ㅣ포근한 이불ㅣ머스크</p>
+                                <h4>시그니처 퍼퓸 코튼허그</h4>
+                                <strong>39,000원</strong>
+                                <span>리뷰 7,939</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/shop_all2.jpg" alt="Shop 이미지2"></a>
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>퍼퓸 샤워의 7가지 향</p>
+                                <h4>올인원 퍼퓸 샤워</h4>
+                                <strong>24,000원</strong>
+                                <span>리뷰 42,641</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/shop_all3.jpg" alt="Shop 이미지3"></a>
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>티 안나는 발색립밤</p>
+                                <h4>히든 립밤</h4>
+                                <strong>139,000원</strong>
+                                <span>리뷰 53</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/shop_all4.jpg" alt="Shop 이미지4"></a>
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>은방울 꽃ㅣ포근한 이불ㅣ머스크</p>
+                                <h4>시그니처 퍼퓸 스프레이</h4>
+                                <strong>23,000원</strong>
+                                <span>리뷰 4,155</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/shop_all5.jpg" alt="Shop 이미지5"></a>
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>화이트닝ㅣ수분충전ㅣ올인원</p>
+                                <h4>시그니처 올인원 에센스</h4>
+                                <strong>28,900원</strong>
+                                <span>리뷰 9,233</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+
+                        <div class="swiper-slide">
+                            <div class="image_wrap">
+                                <a href="#" onclick="return false"><img src="img/shop_all6.jpg" alt="Shop 이미지6"></a>
+                            </div><!-- .image_wrap end -->
+                            <div class="text_wrap">
+                                <p>퍼퓸 샤워볼</p>
+                                <h4>퍼퓸 샤워볼</h4>
+                                <strong>3,000원</strong>
+                                <span>리뷰 1,484</span>
+                                <button class="add_to">Add to cart</button>
+                            </div><!-- .text_wrap end -->
+                        </div><!-- .swiper-slide end -->
+                    </div>
+                </div>
+            </div><!-- .inner end -->
+
+            <div class="shop_wrap">
+                <div class="shop_all">
+                    <div class="image_box">
+                        <img src="img/shop_all1.jpg" alt="shop 전체 상품 이미지1">
+                        <img src="img/shop_all2.jpg" alt="shop 전체 상품 이미지2">
+                        <img src="img/shop_all3.jpg" alt="shop 전체 상품 이미지3">
+                        <img src="img/shop_all4.jpg" alt="shop 전체 상품 이미지4">
+                        <img src="img/shop_all5.jpg" alt="shop 전체 상품 이미지5">
+                        <img src="img/shop_all6.jpg" alt="shop 전체 상품 이미지6">
+                    </div><!-- .image_box end -->
+                    <div class="text_box">
+                        <p>은방울 꽃ㅣ포근한 이불ㅣ머스크</p>
+                        <h4>시그니처 퍼퓸 코튼허그</h4>
+                        <strong>39,000원</strong>
+                        <span>리뷰 7,939</span>
+                        <p>퍼퓸 샤워의 7가지 향</p>
+                        <h4>올인원 퍼퓸 샤워</h4>
+                        <strong>24,000원</strong>
+                        <span>리뷰 42,641</span>
+                        <p>티 안나는 발색립밤</p>
+                        <h4>히든 립밤</h4>
+                        <strong>139,000원</strong>
+                        <span>리뷰 53</span>
+                        <p>은방울 꽃ㅣ포근한 이불ㅣ머스크</p>
+                        <h4>시그니처 퍼퓸 스프레이</h4>
+                        <strong>23,000원</strong>
+                        <span>리뷰 4,155</span>
+                        <p>화이트닝ㅣ수분충전ㅣ올인원</p>
+                        <h4>시그니처 올인원 에센스</h4>
+                        <strong>28,900원</strong>
+                        <span>리뷰 9,233</span>
+                        <p>퍼퓸 샤워볼</p>
+                        <h4>퍼퓸 샤워볼</h4>
+                        <strong>3,000원</strong>
+                        <span>리뷰 1,484</span>
+                    </div><!-- .text_box end -->
+                </div><!-- .shop_all end -->
+
+                <div class="shop_perfume">
+                    <div class="image_box">
+                        <img src="img/shop_purfume1.jpg" alt="shop 향수 상품 이미지1">
+                        <img src="img/shop_purfume2.jpg" alt="shop 향수 상품 이미지2">
+                        <img src="img/shop_purfume3.jpg" alt="shop 향수 상품 이미지3">
+                        <img src="img/shop_purfume4.jpg" alt="shop 향수 상품 이미지4">
+                        <img src="img/shop_purfume5.jpg" alt="shop 향수 상품 이미지5">
+                        <img src="img/shop_purfume6.jpg" alt="shop 향수 상품 이미지6">
+                    </div><!-- .image_box end -->
+                    <div class="text_box">
+                        <p>새하얀 비누 거품ㅣ화이트 아이리스ㅣ코튼 머스크</p>
+                        <h4>시그니처 퍼퓸 코튼배쓰 춘식이 에디션</h4>
+                        <strong>59,000원</strong>
+                        <span>리뷰 355</span>
+                        <p>청량한 카시스ㅣ산들바람ㅣ베티버</p>
+                        <h4>코튼브리즈 썸머 에디션</h4>
+                        <strong>59,000원</strong>
+                        <span>리뷰 195</span>
+                        <p>은방울 꽃ㅣ포근한 이불ㅣ머스크</p>
+                        <h4>시그니처 퍼퓸 코튼허그</h4>
+                        <strong>36,000원</strong>
+                        <span>리뷰 7,988</span>
+                        <p>물기 어린 복숭아ㅣ히아신스ㅣ머스크</p>
+                        <h4>시그니처 퍼퓸 코튼메모리</h4>
+                        <strong>46,000원</strong>
+                        <span>리뷰 8,576</span>
+                        <p>시그니처 퍼퓸의 13가지 향</p>
+                        <h4>시그니처 퍼퓸</h4>
+                        <strong>39,000원</strong>
+                        <span>리뷰 65,753</span>
+                        <p>세상에서 가장 작은 시그니처 퍼퓸 12종</p>
+                        <h4>시그니처 퍼퓸 디스커버리 12종 세트</h4>
+                        <strong>139,000원</strong>
+                        <span>리뷰 61</span>
+                    </div><!-- .text_box end -->
+                </div><!-- .shop_perfume end -->
+
+                <div class="shop_body">
+                    <div class="image_box">
+                        <img src="img/shop_body&hair1.jpg" alt="shop 바디&헤어 상품 이미지1">
+                        <img src="img/shop_body&hair2.jpg" alt="shop 바디&헤어 상품 이미지2">
+                        <img src="img/shop_body&hair3.jpg" alt="shop 바디&헤어 상품 이미지3">
+                        <img src="img/shop_body&hair4.jpg" alt="shop 바디&헤어 상품 이미지4">
+                        <img src="img/shop_body&hair5.jpg" alt="shop 바디&헤어 상품 이미지5">
+                        <img src="img/shop_body&hair6.jpg" alt="shop 바디&헤어 상품 이미지6">
+                    </div><!-- .image_box end -->
+                    <div class="text_box">
+                        <p>퍼퓸 샤워의 8가지 향</p>
+                        <h4>올인원 퍼퓸 샤워</h4>
+                        <strong>19,000원</strong>
+                        <span>리뷰 42,819</span>
+                        <p>시트러스 | 스위트피 | 소프트 캐시미어</p>
+                        <h4>퍼퓸 샤워 코튼 366</h4>
+                        <strong>19,000원</strong>
+                        <span>리뷰 10</span>
+                        <p>새하얀 비누거품 | 화이트 아이리스 | 코튼머스크</p>
+                        <h4>퍼퓸 샤워 코튼 배쓰</h4>
+                        <strong>19,000원</strong>
+                        <span>리뷰 215</span>
+                        <p>물기 어린 복숭아ㅣ히아신스ㅣ머스크</p>
+                        <h4>퍼퓸 샤워 코튼 메모리</h4>
+                        <strong>19,000원</strong>
+                        <span>리뷰 1,412</span>
+                        <p>싱그러운 유자ㅣ바질ㅣ머스크</p>
+                        <h4>퍼퓸 샤워 바질 테라스</h4>
+                        <strong>19,000원</strong>
+                        <span>리뷰 74</span>
+                        <p>청량한 카시스ㅣ산들바람ㅣ베티버</p>
+                        <h4>퍼퓸 샤워 코튼 브리즈</h4>
+                        <strong>19,000원</strong>
+                        <span>리뷰 346</span>
+                    </div><!-- .text_box end -->
+                </div><!-- .shop_body end -->
+
+                <div class="shop_life">
+                    <div class="image_box">
+                        <img src="img/shop_lifestyle1.jpg" alt="shop 라이프스타일 상품 이미지1">
+                        <img src="img/shop_lifestyle2.jpg" alt="shop 라이프스타일 상품 이미지2">
+                        <img src="img/shop_lifestyle3.jpg" alt="shop 라이프스타일 상품 이미지3">
+                        <img src="img/shop_lifestyle4.jpg" alt="shop 라이프스타일 상품 이미지4">
+                        <img src="img/shop_lifestyle5.jpg" alt="shop 라이프스타일 상품 이미지5">
+                        <img src="img/shop_lifestyle6.jpg" alt="shop 라이프스타일 상품 이미지6">
+                    </div><!-- .image_box end -->
+                    <div class="text_box">
+                        <p>은방울 꽃ㅣ포근한 이불ㅣ머스크</p>
+                        <h4>시그니처 퍼퓸 스프레이</h4>
+                        <strong>23,000원</strong>
+                        <span>리뷰 4,155</span>
+                        <p>물기 어린 복숭아ㅣ히아신스ㅣ머스크</p>
+                        <h4>섬유 향수 코튼 메모리</h4>
+                        <strong>29,000원</strong>
+                        <span>리뷰 1,201</span>
+                        <p>퍼퓸 차량용방향제의 4가지 향</p>
+                        <h4>퍼퓸 차량용방향제</h4>
+                        <strong>38,000원</strong>
+                        <span>리뷰 5,193</span>
+                        <p>퍼퓸 차랑용방향제의 3가지 향</p>
+                        <h4>퍼퓸 차량용방향제 리필</h4>
+                        <strong>12,000원</strong>
+                        <span>리뷰 5,193</span>
+                        <p>은방울 꽃ㅣ포근한 이불ㅣ머스크</p>
+                        <h4>퍼퓸 디퓨저 코튼 허그</h4>
+                        <strong>29,000원</strong>
+                        <span>리뷰 2,797</span>
+                        <p>물기 어린 복숭아ㅣ히아신스ㅣ머스크</p>
+                        <h4>올라운드 퍼퓸 디퓨저 코튼 메모리</h4>
+                        <strong>29,000원</strong>
+                        <span>리뷰 418</span>
+                    </div><!-- .text_box end -->
+                </div><!-- .shop_life end -->
+            </div><!-- .shop_wrap end -->
+
+        </section><!-- .shop end -->
+
+
+        <section class="subscribe">
+            <div class="inner">
+                <figure>
+                    <img src="img/subscribe.jpg" alt="정기 배송 이미지">
+                </figure>
+                <div class="text_wrap">
+                    <div class="title">
+                        <p class="eng">Subscribe</p>
+                        <p class="kor">정기 배송 구독</p>
+                    </div><!-- .title end -->
+                    <p><span>Benefit 01</span>전 제품 무료배송</p>
+                    <p><span>Benefit 02</span>회차별 최대 50% 할인</p>
+                    <p><span>Benefit 03</span>맞춤형 배송 주기</p>
+                    <button class="add_to more">More</button>
+                </div><!-- .text_wrap end -->
+            </div><!-- .inner end -->
+        </section><!-- .subscribe end -->
+
+    </main><!-- #main end -->
+
+    <footer id="footer">
+    </footer><!-- #footer end -->
+
+
+    <!-- swiper slide -->
+
+
+    <script>
+        var swiper = new Swiper(".swiper", {
+            slidesPerView: 1,
+            spaceBetween: 12,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            speed: 8000,
+            loop: true,
+            loopAdditionalSlides: 1,
+            slidesPerView: 2,
+            resistance: false,
+            allowTouchMove: true,
+            slideToClickedSlide: true,
+
+            breakpoints: {
+                1301: {
+                    slidesPerView: 4,
+                },
+                521: {
+                    slidesPerView: 3
+                }
+            }
+        });
+
+        $('.swiper').each(function (elem, target) {
+            let swp = target.swiper;
+            $(this).hover(function () {
+                swp.autoplay.stop();
+            }, function () {
+                swp.autoplay.start();
+            });
+        });
+
+    </script>
+</body>
+
+</html>
